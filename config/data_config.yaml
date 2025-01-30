@@ -1,0 +1,17 @@
+# Description: Configuration file for data
+
+# General parameters
+resources:
+  cores: 20
+  mem_mb: 400000
+
+# Dataset specific parameters
+smallpbmc:
+  organism: 'hg38'
+pbmc10x:
+  organism: 'hg38'
+celllines:
+  organism: 'hg38'
+bmmcneurips:
+  organism: 'hg38'
+
