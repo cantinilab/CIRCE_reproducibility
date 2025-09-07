@@ -92,10 +92,13 @@ rule run_pseudocell_circe:
 
 rule circe_from_cicero:
     input:
-        cicero_cds = "results/{sample}/cicero/cicero_singlecell_cells.tsv"
+        cicero_cds = "results/{sample}/cicero/cicero_singlecell_cells.tsv",
+        human_genome = "data/genome/hg38.txt",
+        mouse_genome = "data/genome/mm10.txt"
     params:
+        organism = lambda wildcards: config[wildcards.sample]["organism"],
         distance_threshold = 500_000,
-        n_samples = 100,
+        n_samples = 500,
         n_maxtry = 500,
         max_n_iter_alpha = 100,
         n_jobs = 20
