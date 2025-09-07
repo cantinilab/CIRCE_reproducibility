@@ -1,9 +1,7 @@
 This repository contains the code to replicate the experiment of CIRCE's manuscript, accessible [here]()
 
-<p align="center">
-  <picture>
-    <img alt="Circe overview figure" src="https://raw.githubusercontent.com/cantinilab/CIRCE_reproducibility/main/circe_figure.png" width="600">
-  </picture>
+<p align="left">
+    <img alt="Circe overview figure" src=circe_figure.png width="600">
 </p>
 
 ## Organisation
