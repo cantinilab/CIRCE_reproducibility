@@ -6,12 +6,12 @@ This repository contains the code to replicate the experiment of CIRCE's manuscr
 
 ## Organisation
 The code is a snakemake workflow, from data downloading to network inference.
-<br>The figures are then generated in the notebook [___](___).
+<br>The figures are then generated in the notebook [Figures_notebook](Figures_notebook.ipynb).
 
 You will find here:
 1. The short benchmark of the packages [CIRCE](https://github.com/cantinilab/Circe), in python, and [Cicero](https://github.com/cole-trapnell-lab/cicero-release), in R.
     - This comparison is done on 2 datasets (PBMC_10X and BMMC_neurips2021) but can easily be extended to other datasets.
-2. The scripts to process the [human fetal scATAC atlas](____), used to evaluate CIRCE on very large datasets.
+2. The scripts to process the [human fetal scATAC atlas](https://www.science.org/doi/10.1126/science.aba7612), used to evaluate CIRCE on very large datasets.
 
 ## Execution
 ### 1. Build singularities
