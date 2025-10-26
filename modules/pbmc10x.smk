@@ -1,3 +1,15 @@
+# Already processed
+rule zenodo_download_public:
+    output: "data/datasets/pbmc10x/pbmc10x.h5mu"
+    params:
+        record="17450969",
+        filename="pbmc10x.h5mu"
+    shell:
+        r"""
+        wget -O {output} \
+          "https://zenodo.org/api/records/{params.record}/files/{params.filename}/content"
+        """
+
 ###################################################################################
 # Download and preprocessing of PBMC10X dataset from GRETA benchmark repository:  #
 #      - https://github.com/saezlab/greta_benchmark/                              #
