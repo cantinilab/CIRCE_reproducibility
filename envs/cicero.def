@@ -37,7 +37,7 @@ From: ubuntu:20.04
     conda activate
 
     # Create env
-    mamba create -y -n=env -c conda-forge -c bioconda \
+    mamba create -y -n env -c conda-forge -c bioconda \
     python=3.10 \
     r-base==4.2 \
     r-monocle3 \
