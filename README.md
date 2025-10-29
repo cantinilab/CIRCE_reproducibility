@@ -17,7 +17,15 @@ You will find here:
 ### 1. Build singularities
 You will first need to install singularity/apptainer and to re-create the containers of CIRCE and Cicero:
 
-```singularity build envs/circe.sif envs/circe.def```
+```
+singularity build envs/circe.sif envs/circe.def
+```
+
+_Alternatively, you can download the singularity images of both CIRCE and Cicero directly (!you will still need singularity/apptainer to run the benchmark!):_
+```
+wget https://zenodo.org/records/17450969/files/circe.sif?download=1 -O envs/circe.sif
+wget https://zenodo.org/records/17450969/files/cicero.sif?download=1 -O envs/cicero.sif
+```
 
 ### 2. Run jobs
 You can now produce the output of interest for you with:
