@@ -42,6 +42,28 @@ rule run_singlecell_circe:
     script:
         "../scripts/circe/run_circe_singlecell.py"
 
+rule run_monojob_singlecell_circe:
+    resources:
+        cores=config["resources"]["cores"],
+        mem_mb=config["resources"]["mem_mb"]
+    input:
+        atac = "data/datasets/{sample}/{sample}.h5ad"
+    params:
+        binarize = False,
+        distance_threshold = 500_000,
+        n_samples = 100,
+        n_maxtry = 500,
+        max_n_iter_alpha = 100,
+        n_jobs = 1
+    benchmark:
+        "benchmark/{sample}/monojob_singlecell_circe_time.txt"
+    singularity:
+        "envs/circe.sif"
+    output:
+        circe_results = "results/{sample}/circe/monojob_circe_singlecell.tsv"
+    script:
+        "../scripts/circe/run_circe_singlecell.py"
+
 
 rule run_pseudocell_circe_bin:
     resources:
@@ -66,6 +88,7 @@ rule run_pseudocell_circe_bin:
     script:
         "../scripts/circe/run_circe_pseudocell.py"
 
+
 rule run_pseudocell_circe:
     resources:
         cores=config["resources"]["cores"],
@@ -86,6 +109,29 @@ rule run_pseudocell_circe:
         "envs/circe.sif"
     output:
         circe_results = "results/{sample}/circe/circe_pseudocell.tsv"
+    script:
+        "../scripts/circe/run_circe_pseudocell.py"
+
+rule run_monojob_pseudocell_circe:
+    resources:
+        cores=config["resources"]["cores"],
+        mem_mb=config["resources"]["mem_mb"]
+    input:
+        atac = "data/datasets/{sample}/{sample}.h5ad"
+    params:
+        binarize = False,
+        distance_threshold = 500_000,
+        number_cells_per_clusters = 50,
+        n_samples = 100,
+        n_maxtry = 500,
+        max_n_iter_alpha = 100,
+        n_jobs = 1
+    benchmark:
+        "benchmark/{sample}/monojob_pseudocell_circe_time.txt"
+    singularity:
+        "envs/circe.sif"
+    output:
+        circe_results = "results/{sample}/circe/monojob_circe_pseudocell.tsv"
     script:
         "../scripts/circe/run_circe_pseudocell.py"
 
