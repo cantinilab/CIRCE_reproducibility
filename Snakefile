@@ -46,11 +46,11 @@ module enhancers_analysis:
     config: config
 use rule * from enhancers_analysis
 
-## 3. Module to run Cicero
-#module cicero:
-#    snakefile: "modules/cicero.smk"
-#    config: config
-#use rule * from cicero
+# 3. Module to run Cicero
+module cicero:
+    snakefile: "modules/cicero.smk"
+    config: config
+use rule * from cicero
 
 # 2. Module to run circe
 module circe:
