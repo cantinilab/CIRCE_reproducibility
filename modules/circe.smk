@@ -144,8 +144,8 @@ rule circe_from_cicero:
     params:
         organism = lambda wildcards: config[wildcards.sample]["organism"],
         distance_threshold = 500_000,
-        n_samples = 500,
-        n_maxtry = 500,
+        n_samples = 1000,  # High number of samples to increase robustness and similarity
+        n_maxtry = 1000,
         max_n_iter_alpha = 100,
         n_jobs = 20
     singularity:

@@ -55,15 +55,24 @@ rule map_PCHic_regions_from_hg19_to_hg38:
 
 rule download_promoter_capture_HiC:
     params:
-        url = "https://www.cell.com/cms/10.1016/j.cell.2016.09.037/attachment/5bc79f6f-1b69-4192-8cb8-4247cc2e0f39/mmc4.zip"
+        # Dataset has to be downloaded and extract manually (PCHiC_peak_matrix_cutoff5.tsv)
+        #url = "https://www.cell.com/cms/10.1016/j.cell.2016.09.037/attachment/5bc79f6f-1b69-4192-8cb8-4247cc2e0f39/mmc4.zip"
+        url = "https://ars.els-cdn.com/content/image/1-s2.0-S0092867416313228-mmc4.zip",
+        tmp_human_pchic = "data/PCHiC/tmp"
     output:
         human_pchic = "data/PCHiC/PBMC_hg19_PCHiC.tsv",
     shell:
         """
-        # Dataset has to be downloaded and extract manually (PCHiC_meak_matrix_cutoff5.tsv)
+        mkdir -p {params.tmp_human_pchic}
+        wget -O {params.tmp_human_pchic}/mmc4.zip \
+            {params.url}
+        unzip "{params.tmp_human_pchic}/mmc4.zip" -d {params.tmp_human_pchic}
+        unzip "{params.tmp_human_pchic}/DATA_S1.zip" -d {params.tmp_human_pchic}
+        mv {params.tmp_human_pchic}/PCHiC_peak_matrix_cutoff5.tsv {output.human_pchic}
 
-        cp data/PCHiC/PCHiC_peak_matrix_cutoff5.tsv {output.human_pchic}
+        rm -r {params.tmp_human_pchic}
         """
+  
 
 
 rule auroc_PCHiC_overlap:

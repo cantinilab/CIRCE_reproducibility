@@ -41,6 +41,9 @@ snakemake -n {output_requested}
 ```
 ! The scripts calling Cicero might run in more than a day, hence I would advice you to run only one/few job(s) at a time.
 
+! To proceed to the evaluation (the jobs `auroc_PCHiC_overlap`), you will need [bedtools](https://bedtools.readthedocs.io/en/latest/content/installation.html). 
+If you run it on a scientific HPC, it is probably already available and can be loaded with `module load bedtools` or a similar command.
+
 ### 3. Draw figure panels
 You can then reproduce the figure panels which have all necessary outputs available. 
 

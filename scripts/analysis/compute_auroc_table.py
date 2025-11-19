@@ -8,7 +8,7 @@ auroc_dict = {}
 for auroc_file in auroc_files:
     auroc_df = pd.read_csv(auroc_file, sep='\t')
     print(auroc_file)
-    auroc = roc_auc_score(auroc_df['score'], auroc_df['name'])
+    auroc = roc_auc_score(auroc_df['score'], auroc_df['name'].abs())
     auroc_dict[auroc_file] = auroc
 
 # Save dictionary as a table

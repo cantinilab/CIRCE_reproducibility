@@ -8,7 +8,6 @@ rule download_genomesizes:
         wget 'http://hgdownload.soe.ucsc.edu/goldenPath/mm10/bigZips/mm10.chrom.sizes' -O {output.mm10}
         """
 
-
 rule run_singlecell_cicero:
     resources:
         cores=config["resources"]["cores"],
