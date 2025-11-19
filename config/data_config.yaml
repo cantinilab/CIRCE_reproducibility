@@ -1,5 +1,10 @@
 # Description: Configuration file for data
 
+# Zenodo record for datasets
+record: 17578575
+# Filename for PCHiC data
+PCHiC_filename: "PCHiC_peak_matrix_cutoff5.tsv"
+
 # General parameters
 resources:
   cores: 20
