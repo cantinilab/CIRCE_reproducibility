@@ -3,7 +3,7 @@ from snakemake.utils import min_version
 min_version("7.0.0")
 
 configfile: "config/data_config.yaml"
-samples = ["bmmcneurips"]  #["smallpbmc", "pbmc10x"]
+samples = ["bmmcneurips", "pbmc10x"]  #["smallpbmc", "pbmc10x"]
 method = ["circe", "cicero"]
 clustering = ["singlecell", "pseudocell"]
 
@@ -21,6 +21,10 @@ rule all:
             sample=samples, clustering=clustering),
 
         # For correlation between Cicero and Circe
+        expand("results/{sample}/correlation_table_pearson.tsv",
+            sample=samples, clustering=clustering),
+        expand("results/{sample}/correlation_table_spearman.tsv",
+            sample=samples, clustering=clustering),
 
         # For evaluation on PCHiC - pbmc10x
         expand("results/pbmc10x/cicero/cicero{bin}_{clustering}_PCHiC_overlap.tsv",
@@ -43,10 +47,10 @@ module enhancers_analysis:
 use rule * from enhancers_analysis
 
 ## 3. Module to run Cicero
-module cicero:
-    snakefile: "modules/cicero.smk"
-    config: config
-use rule * from cicero
+#module cicero:
+#    snakefile: "modules/cicero.smk"
+#    config: config
+#use rule * from cicero
 
 # 2. Module to run circe
 module circe:
