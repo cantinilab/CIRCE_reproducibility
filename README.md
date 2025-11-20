@@ -6,7 +6,7 @@ This repository contains the code to replicate the experiment of CIRCE's manuscr
 
 ## Organisation
 The code is a snakemake workflow, from data downloading to network inference.
-<br>The figures are then generated in the notebook [Figures_notebook](Figures_notebook.ipynb).
+<br>The figures are then generated in the notebook [Figures_notebook](Notebook_Figures.ipynb).
 
 You will find here:
 1. The short benchmark of the packages [CIRCE](https://github.com/cantinilab/Circe), in python, and [Cicero](https://github.com/cole-trapnell-lab/cicero-release), in R.
@@ -45,8 +45,7 @@ snakemake -n {output_requested}
 If you run it on a scientific HPC, it is probably already available and can be loaded with `module load bedtools` or a similar command.
 
 ### 3. Draw figure panels
-You can then reproduce the figure panels which have all necessary outputs available. 
-
+You can then reproduce the figure panels which have all necessary outputs available with the notebook [Figures_notebook](Notebook_Figures.ipynb).
 
 
 
