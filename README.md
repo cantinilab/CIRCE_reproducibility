@@ -23,8 +23,8 @@ singularity build envs/circe.sif envs/circe.def
 
 _Alternatively, you can download the singularity images of both CIRCE and Cicero directly (!you will still need singularity/apptainer to run the benchmark!):_
 ```
-wget https://zenodo.org/records/17450969/files/circe.sif?download=1 -O envs/circe.sif
-wget https://zenodo.org/records/17450969/files/cicero.sif?download=1 -O envs/cicero.sif
+wget https://zenodo.org/records/17661273/files/circe.sif?download=1 -O envs/circe.sif
+wget https://zenodo.org/records/17661273/files/cicero.sif?download=1 -O envs/cicero.sif
 ```
 
 ### 2. Run jobs

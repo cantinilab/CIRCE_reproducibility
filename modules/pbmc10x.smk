@@ -2,7 +2,7 @@
 rule zenodo_download_public:
     output: "data/datasets/pbmc10x/pbmc10x.h5mu"
     params:
-        record="17450969",
+        record="17661273",
         filename="pbmc10x.h5mu"
     shell:
         r"""
