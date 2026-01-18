@@ -1,4 +1,4 @@
-This repository contains the code to replicate the experiment of CIRCE's manuscript, accessible [here]()
+This repository contains the code to replicate the experiment of CIRCE's manuscript, accessible [here](https://www.biorxiv.org/content/10.1101/2025.09.23.678054v2)
 
 <p align="left">
     <img alt="Circe overview figure" src=circe_figure.png width="600">
