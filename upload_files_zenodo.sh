@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ZENODO_TOKEN=SVnlsedTXNBbaGQKgWJmXmI6vF0ONzaj295F7G7aZyGQyFaqW1hI8EzrKLL9
+ZENODO_TOKEN=___
 
 
 API_BASE="https://zenodo.org/api"
